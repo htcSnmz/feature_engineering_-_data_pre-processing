@@ -51,7 +51,7 @@ df[(df["Age"] > up) | (df["Age"] < low)].head()
 
 def check_outlier(dataframe, col_name):
     low_limit, up_limit = outlier_threshold(dataframe, col_name)
-    if dataframe[(dataframe[col_name] > up) | (dataframe[col_name] < low)].any(axis=None):
+    if dataframe[(dataframe[col_name] > up_limit) | (dataframe[col_name] < low_limit)].any(axis=None):
         return True
     else:
         return False
